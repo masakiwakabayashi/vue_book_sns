@@ -26,40 +26,37 @@ const doLogin = async () => {
 </script>
 
 <template>
-  <div>
+  <div class="max-w-md mx-auto p-6 mt-10 bg-white shadow-md rounded-lg">
     <!-- メールアドレス -->
-    <div class="form-block">
-      <label for="email">メールアドレス</label><br>
+    <div class="form-block mb-4">
+      <label for="email" class="block text-gray-700 font-medium mb-1">メールアドレス</label>
       <input
         id="email"
         type="email"
         placeholder="email"
         v-bind:value="email"
         v-on:input="email = $event.target.value"
+        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
       >
     </div>
     <!-- パスワード -->
-    <div class="form-block">
-      <label for="password">パスワード</label><br>
+    <div class="form-block mb-4">
+      <label for="password" class="block text-gray-700 font-medium mb-1">パスワード</label>
       <input
         id="password"
         type="password"
         placeholder="password"
         v-bind:value="password"
         v-on:input="password = $event.target.value"
+        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
       >
     </div>
     <!-- 送信ボタン -->
     <div>
       <button
         v-on:click="doLogin()"
+        class="w-full bg-blue-600 text-white font-medium py-2 rounded-lg hover:bg-blue-700 transition"
       >送信</button>
     </div>
   </div>
 </template>
-
-
-<style>
-
-
-</style>
