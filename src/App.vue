@@ -9,25 +9,13 @@ import { RouterLink, RouterView } from 'vue-router'
   <header class="bg-blue-600 text-white shadow-md">
     <div class="wrapper max-w-7xl mx-auto px-4 py-3">
       <nav class="flex justify-between items-center">
-        <div class="text-lg font-bold">My App</div>
+        <div class="text-lg font-bold">Book Land</div>
         <div class="space-x-4">
           <RouterLink
             to="/"
             class="hover:text-blue-200 transition-colors duration-200"
           >
             Home
-          </RouterLink>
-          <RouterLink
-            to="/about"
-            class="hover:text-blue-200 transition-colors duration-200"
-          >
-            About
-          </RouterLink>
-          <RouterLink
-            to="/sample"
-            class="hover:text-blue-200 transition-colors duration-200"
-          >
-            Sample
           </RouterLink>
           <RouterLink
             to="/login"
