@@ -21,5 +21,10 @@ onMounted(getCurrentUser);
   <div>
     <h1 class="p-3">Home Page</h1>
     <p>{{ user?.email }}</p>
+    <!--  -->
+
+
+
+
   </div>
 </template>

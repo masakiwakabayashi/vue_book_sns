@@ -7,19 +7,19 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header class="bg-blue-600 text-white shadow-md">
-    <div class="wrapper max-w-7xl mx-auto px-4 py-3">
+    <div class="wrapper max-w-7xl mx-auto px-4 py-5">
       <nav class="flex justify-between items-center">
-        <div class="text-lg font-bold">Book Land</div>
-        <div class="space-x-4">
+        <div class="text-3xl font-bold">Book Land</div>
+        <div class="space-x-4 mr-4">
           <RouterLink
             to="/"
-            class="hover:text-blue-200 transition-colors duration-200"
+            class="text-lg hover:text-blue-200 transition-colors duration-200"
           >
             Home
           </RouterLink>
           <RouterLink
             to="/login"
-            class="hover:text-blue-200 transition-colors duration-200"
+            class="text-lg hover:text-blue-200 transition-colors duration-200"
           >
             Login
           </RouterLink>
