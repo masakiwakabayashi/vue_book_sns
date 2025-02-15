@@ -15,6 +15,16 @@ const router = createRouter({
       name: 'login',
       component: () => import('../views/Login.vue'),
     },
+    {
+      path: '/ranking/user',
+      name: 'user_ranking',
+      component: () => import('../views/UserRanking.vue'),
+    },
+    {
+      path: '/ranking/book',
+      name: 'book_ranking',
+      component: () => import('../views/BookRanking.vue'),
+    },
   ],
 });
 
