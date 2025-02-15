@@ -25,6 +25,11 @@ const router = createRouter({
       name: 'book_ranking',
       component: () => import('../views/BookRanking.vue'),
     },
+    {
+      path: '/search/books',
+      name: 'search_books',
+      component: () => import('../views/SearchBooks.vue'),
+    },
   ],
 });
 

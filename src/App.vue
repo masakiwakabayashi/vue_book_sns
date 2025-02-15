@@ -12,6 +12,12 @@ import { RouterLink, RouterView } from 'vue-router'
         <div class="text-3xl font-bold">Book Land</div>
         <div class="space-x-4 mr-4">
           <RouterLink
+            to="/search/books"
+            class="text-lg hover:text-blue-200 transition-colors duration-200"
+          >
+            Search
+          </RouterLink>
+          <RouterLink
             to="/ranking/user"
             class="text-lg hover:text-blue-200 transition-colors duration-200"
           >
