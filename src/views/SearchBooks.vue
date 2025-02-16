@@ -784,10 +784,17 @@ const books = ref(
       <div class="bg-white shadow-md rounded-2xl p-6">
         <h2 class="text-blue-600 text-2xl font-bold mb-4">検索結果</h2>
         <ul class="space-y-4">
-          <!-- <li v-for="(book, index) in books" :key="index" class="border-b pb-4">
-            <h3 class="text-lg font-semibold text-gray-800">{{ book.volumeInfo.title }}</h3>
+          <li class="border-b pb-4">
+            <!-- 一旦仮置き -->
+            <RouterLink
+              to="/book/1"
+              class="text-lg hover:text-blue-200 transition-colors duration-200"
+            >
+              本の詳細ページへのリンク
+            </RouterLink>
 
-          </li> -->
+
+          </li>
         </ul>
       </div>
     </div>

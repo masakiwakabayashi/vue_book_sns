@@ -30,6 +30,11 @@ const router = createRouter({
       name: 'search_books',
       component: () => import('../views/SearchBooks.vue'),
     },
+    {
+      path: '/book/:id',
+      name: 'book',
+      component: () => import('../views/Book.vue'),
+    },
   ],
 });
 
