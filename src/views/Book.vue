@@ -78,7 +78,7 @@ const book = ref(
     <div class="max-w-3xl mx-auto">
       <!-- Header Section -->
       <div class="bg-white shadow-md rounded-2xl p-6 mb-6">
-        <h1 class="text-blue-600 text-3xl font-bold">{{ book.title }}</h1>
+        <h1 class="text-blue-600 text-3xl font-bold">{{ book.volumeInfo.title }}</h1>
       </div>
 
       <!-- Book Details Section -->
@@ -87,21 +87,26 @@ const book = ref(
           <!-- Book Image -->
           <div class="flex-shrink-0">
             <img 
-              :src="book.imageLinks" 
+              :src="book.volumeInfo.imageLinks.thumbnail" 
               alt="Book Cover" 
               class="w-48 h-64 object-cover rounded-lg"
             />
           </div>
-          <p>{{ book.imageLinks }}</p>
 
           <!-- Book Info -->
           <div>
             <h2 class="text-blue-600 font-bold text-2xl mb-4">書籍情報</h2>
-            <p class="text-gray-700 mb-2"><strong>著者:</strong> {{ book.author }}</p>
-            <p class="text-gray-700 mb-2"><strong>出版日:</strong> {{ book.publishedDate }}</p>
-            <p class="text-gray-700 mb-4"><strong>ページ数:</strong> {{ book.pageCount }}ページ</p>
+            <p class="text-gray-700 mb-2">
+              <strong>著者:</strong> {{ book.volumeInfo.authors[0] }}
+            </p>
+            <p class="text-gray-700 mb-2">
+              <strong>出版日:</strong> {{ book.volumeInfo.publishedDate }}
+            </p>
+            <p class="text-gray-700 mb-4">
+              <strong>ページ数:</strong> {{ book.volumeInfo.pageCount }}ページ
+            </p>
             <h3 class="text-blue-600 font-bold text-xl mb-2">説明</h3>
-            <p class="text-gray-700">{{ book.description }}</p>
+            <p class="text-gray-700">{{ book.volumeInfo.description }}</p>
           </div>
         </div>
       </div>

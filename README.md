@@ -24,6 +24,10 @@ npx supabase start
 npx supabase db reset
 ```
 
+```sh
+npx supabase status
+```
+
 ## Create Migration
 
 ```sh
