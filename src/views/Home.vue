@@ -1,81 +1,113 @@
-<script setup>
-import { supabase } from '@/lib/supabaseClient';
-import { onMounted, ref } from 'vue';
-
-const user = ref(null);
-
-const getCurrentUser = async () => {
-  const { data, error } = await supabase.auth.getUser();
-  if (error) {
-    console.error('ユーザー情報取得エラー:', error.message);
-  }
-  console.log(data.user);
-  user.value = data.user;
-}
-
-onMounted(getCurrentUser);
-
-</script>
-
 <template>
   <div class="bg-blue-50 min-h-screen p-6">
-    <div class="max-w-4xl mx-auto">
-      <!-- Account Info Section -->
+    <div class="max-w-2xl mx-auto">
+      <!-- Header -->
       <div class="bg-white shadow-md rounded-2xl p-6 mb-6">
-        <h2 class="text-blue-600 text-2xl font-bold mb-4">アカウント情報</h2>
-        <p class="text-gray-700">
-          <span class="font-semibold">ユーザー名:</span> 山田太郎
-        </p>
-        <p class="text-gray-700">
-          <span class="font-semibold">メールアドレス:</span> {{ user?.email }}
-        </p>
+        <h1 class="text-blue-600 text-3xl font-bold">タイムライン</h1>
       </div>
 
-      <!-- Ranking Section -->
-      <div class="bg-white shadow-md rounded-2xl p-6 mb-6">
-        <h2 class="text-blue-600 text-2xl font-bold mb-4">ランキング</h2>
-        <p class="text-gray-700 text-lg">現在の順位: <span class="text-blue-600 font-semibold">15位</span></p>
+      <!-- Post Input Section -->
+      <div class="bg-white shadow-md rounded-2xl p-4 mb-6">
+        <button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
+          投稿する
+        </button>
       </div>
 
-      <!-- Books List Section -->
-      <div class="bg-white shadow-md rounded-2xl p-6 mb-6">
-        <h2 class="text-blue-600 text-2xl font-bold mb-4">読んだ本と読みたい本</h2>
-        <div class="mb-4">
-          <h3 class="text-lg font-semibold mb-2">読んだ本</h3>
-          <ul class="list-disc pl-6 text-gray-700">
-            <li>「吾輩は猫である」</li>
-            <li>「こころ」</li>
-            <li>「三四郎」</li>
-          </ul>
+      <!-- Timeline Posts -->
+      <div class="space-y-6">
+        <!-- Post 1 -->
+        <div class="bg-white shadow-md rounded-2xl p-4">
+          <div class="flex gap-4">
+            <img src="https://via.placeholder.com/50" alt="User Avatar" class="w-12 h-12 rounded-full" />
+            <div class="w-full">
+              <div class="flex justify-between items-center">
+                <div>
+                  <span class="inline-block bg-blue-100 text-blue-600 font-semibold px-2 py-1 rounded-full mt-2 mr-3">
+                    本の感想
+                  </span>
+                  <span class="font-bold text-blue-600">山田太郎</span>
+                  <span class="text-gray-500 text-sm ml-2">@taro_yamada</span>
+                </div>
+                <span class="text-gray-400 text-sm">1時間前</span>
+              </div>
+              <p class="text-gray-800 mt-2">ITエンジニアのための機械学習理論入門</p>
+              <img
+              src="https://via.placeholder.com/400"
+              alt="ここに本の画像"
+              class="w-full rounded-lg shadow-md mt-3"
+              />
+              <div class="flex justify-between text-gray-500 mt-4 text-sm">
+                <span class="cursor-pointer hover:text-blue-600">コメント 12</span>
+                <span class="cursor-pointer hover:text-blue-600">いいね 89</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-          <h3 class="text-lg font-semibold mb-2">読みたい本</h3>
-          <ul class="list-disc pl-6 text-gray-700">
-            <li>「羅生門」</li>
-            <li>「雪国」</li>
-            <li>「人間失格」</li>
-          </ul>
-        </div>
-      </div>
 
-      <!-- Weekly and Monthly Read Books Section -->
-      <div class="bg-white shadow-md rounded-2xl p-6">
-        <h2 class="text-blue-600 text-2xl font-bold mb-4">今週と今月読んだ本</h2>
-        <div class="mb-4">
-          <h3 class="text-lg font-semibold mb-2">今週読んだ本</h3>
-          <ul class="list-disc pl-6 text-gray-700">
-            <li>「学問のすゝめ」</li>
-            <li>「坊っちゃん」</li>
-          </ul>
+        <!-- Post 2 -->
+        <div class="bg-white shadow-md rounded-2xl p-4">
+          <div class="flex gap-4">
+            <img src="https://via.placeholder.com/50" alt="User Avatar" class="w-12 h-12 rounded-full" />
+            <div class="w-full">
+              <div class="flex justify-between items-center">
+                <div>
+                  <span class="inline-block bg-blue-100 text-blue-600 font-semibold px-2 py-1 rounded-full mt-2 mr-3">
+                    本の感想
+                  </span>
+                  <span class="font-bold text-blue-600">山田太郎</span>
+                  <span class="text-gray-500 text-sm ml-2">@taro_yamada</span>
+                </div>
+                <span class="text-gray-400 text-sm">1時間前</span>
+              </div>
+              <p class="text-gray-800 mt-2">ITエンジニアのための機械学習理論入門</p>
+              <img
+              src="https://via.placeholder.com/400"
+              alt="ここに本の画像"
+              class="w-full rounded-lg shadow-md mt-3"
+              />
+              <div class="flex justify-between text-gray-500 mt-4 text-sm">
+                <span class="cursor-pointer hover:text-blue-600">コメント 12</span>
+                <span class="cursor-pointer hover:text-blue-600">いいね 89</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-          <h3 class="text-lg font-semibold mb-2">今月読んだ本</h3>
-          <ul class="list-disc pl-6 text-gray-700">
-            <li>「草枕」</li>
-            <li>「銀河鉄道の夜」</li>
-            <li>「山月記」</li>
-          </ul>
+
+        <!-- Post 3 -->
+        <div class="bg-white shadow-md rounded-2xl p-4">
+          <div class="flex gap-4">
+            <img src="https://via.placeholder.com/50" alt="User Avatar" class="w-12 h-12 rounded-full" />
+            <div class="w-full">
+              <div class="flex justify-between items-center">
+                <div>
+                  <span class="inline-block bg-blue-100 text-blue-600 font-semibold px-2 py-1 rounded-full mt-2 mr-3">
+                    本の感想
+                  </span>
+                  <span class="font-bold text-blue-600">山田太郎</span>
+                  <span class="text-gray-500 text-sm ml-2">@taro_yamada</span>
+                </div>
+                <span class="text-gray-400 text-sm">1時間前</span>
+              </div>
+              <p class="text-gray-800 mt-2">ITエンジニアのための機械学習理論入門</p>
+              <img
+              src="https://via.placeholder.com/400"
+              alt="ここに本の画像"
+              class="w-full rounded-lg shadow-md mt-3"
+              />
+              <div class="flex justify-between text-gray-500 mt-4 text-sm">
+                <span class="cursor-pointer hover:text-blue-600">コメント 12</span>
+                <span class="cursor-pointer hover:text-blue-600">いいね 89</span>
+              </div>
+            </div>
+          </div>
         </div>
+
+
+
+
+
+
+
       </div>
     </div>
   </div>
