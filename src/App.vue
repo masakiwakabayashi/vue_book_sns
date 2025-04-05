@@ -9,7 +9,13 @@ import { RouterLink, RouterView } from 'vue-router'
   <header class="bg-blue-600 text-white shadow-md">
     <div class="wrapper max-w-7xl mx-auto px-4 py-5">
       <nav class="flex justify-between items-center">
-        <div class="text-3xl font-bold">Book Land</div>
+        <div class="text-3xl font-bold">
+          <RouterLink
+            to="/"
+          >
+            Book Land
+          </RouterLink>
+        </div>
         <div class="space-x-4 mr-4">
           <RouterLink
             to="/search/books"
@@ -17,12 +23,12 @@ import { RouterLink, RouterView } from 'vue-router'
           >
             Search
           </RouterLink>
-          <RouterLink
+          <!-- <RouterLink
             to="/ranking/user"
             class="text-lg hover:text-blue-200 transition-colors duration-200"
           >
             Ranking
-          </RouterLink>
+          </RouterLink> -->
           <RouterLink
             to="/"
             class="text-lg hover:text-blue-200 transition-colors duration-200"
